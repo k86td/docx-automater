@@ -1,27 +1,58 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--background: rgb(225,248,255);
+	--accent: rgb(0, 0, 0);
+
+	background-color: var(--background);
+	font-family: 'Josefin Sans', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.title-description {
+	display: inline-block;
+	position: relative;
+	padding-left: 15px;
+	margin-bottom: 10px;
+	color: var(--accent);
+	font-size: 20px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.title-description::before {
+	background-color: var(--accent);
+	content: "";
+	position: absolute;
+	top: 5px;
+	bottom: 5px;
+	left: 0;
+	width: 2px;
+}
+
+
+.title-title {
+	color: var(--accent);
+	font-size: 30px;
+	text-decoration: underline;
+	opacity: 75%;
+	font-weight: bold;
+}
+
+#menu-actions {
+	margin: 100px;
+}
+
+.horizontal-centered {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+html {
+	padding: 25px;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
 }
