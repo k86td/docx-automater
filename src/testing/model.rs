@@ -1,16 +1,15 @@
 use std::time::Duration;
 
 use tuirealm::{
-    props::Alignment,
     terminal::TerminalBridge,
     tui::prelude::{Constraint, Direction, Layout},
     Application, AttrValue, Attribute, EventListenerCfg, NoUserEvent, Update,
 };
 
 use crate::{
-    label::Label,
-    letter_counter::LetterCounter,
-    messages::{Id, Msg},
+    testing::label::Label,
+    testing::letter_counter::LetterCounter,
+    testing::messages::{Id, Msg},
 };
 
 pub struct Model {

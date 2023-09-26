@@ -1,18 +1,13 @@
-use std::time::Duration;
+use tuirealm::{PollStrategy, Update};
 
-use messages::{Id, Msg};
-use tuirealm::{
-    terminal::TerminalBridge, Application, AttrValue, Attribute,
-    EventListenerCfg, NoUserEvent, PollStrategy, Update, adapter::crossterm,
-};
+use crate::testing::model::Model;
 
-use crate::{letter_counter::LetterCounter, model::Model, label::Label};
+use diesel::prelude::*;
+use diesel::sqlite::SqliteConnection;
+use dotenvy::dotenv;
+use std::env;
 
-mod counter;
-mod letter_counter;
-mod messages;
-mod model;
-mod label;
+mod testing;
 
 fn main() {
     let mut model = Model::default();
@@ -47,5 +42,3 @@ fn main() {
     let _ = model.terminal.disable_raw_mode();
     let _ = model.terminal.clear_screen();
 }
-
-

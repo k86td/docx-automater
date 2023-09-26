@@ -5,7 +5,7 @@ use tuirealm::{
     Component, Event, MockComponent, NoUserEvent, State, StateValue,
 };
 
-use crate::{counter::Counter, messages::Msg};
+use crate::testing::{counter::Counter, messages::Msg};
 
 #[derive(MockComponent)]
 pub struct LetterCounter {

@@ -5,7 +5,7 @@ use tuirealm::{
     AttrValue, Attribute, Component, Frame, MockComponent, NoUserEvent, Props, State, Event,
 };
 
-use crate::messages::Msg;
+use crate::testing::messages::Msg;
 
 pub struct Label {
     props: Props,
