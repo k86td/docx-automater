@@ -1,16 +1,19 @@
+use docx_automater::app_state::AppState;
 use tuirealm::{PollStrategy, Update};
 
 use crate::testing::model::Model;
 
-use diesel::prelude::*;
-use diesel::sqlite::SqliteConnection;
+// use diesel::prelude::*;
+// use diesel::sqlite::SqliteConnection;
+mod testing;
+
 use dotenvy::dotenv;
 use std::env;
 
-mod testing;
-
 fn main() {
-    let mut model = Model::default();
+
+    let mut model = AppState::default();
+    // let mut model = Model::default();
 
     let _ = model.terminal.enter_alternate_screen();
     let _ = model.terminal.enable_raw_mode();
